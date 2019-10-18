@@ -1,0 +1,9 @@
+[Unit]
+Description = test-interrupt.service
+
+[Service]
+Type = oneshot
+ExecStart = /usr/bin/systemctl stop test-instance.target
+ExecStart = /usr/bin/systemctl start test-interrupt.target
+ExecStart = /usr/bin/systemctl stop test-interrupt.target
+ExecStart = /usr/bin/systemctl start test-instance.target

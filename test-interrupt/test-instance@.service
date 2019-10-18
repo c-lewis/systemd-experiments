@@ -1,0 +1,11 @@
+[Unit]
+Description = test-instance@%i.service
+PartOf = test-instance.target
+
+[Service]
+ExecStart = /usr/bin/sleep 1d
+ExecStopPost = /usr/bin/sleep 60s
+Restart = always
+
+[Install]
+WantedBy = test-instance.target

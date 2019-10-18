@@ -1,0 +1,10 @@
+[Unit]
+Description = test-interrupt@%i.service
+PartOf = test-interrupt.target
+
+[Service]
+Type = oneshot
+ExecStart = /usr/bin/sleep 30s
+
+[Install]
+WantedBy = test-interrupt.target
